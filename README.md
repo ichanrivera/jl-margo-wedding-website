@@ -17,7 +17,7 @@ Open [localhost:3000](http://localhost:3000). Run `npm run lint` and `npm run bu
 - Add the real RSVP form URL to `WEDDING.rsvpUrl` when available. With an empty URL, guests are asked to message the couple directly. No responses are collected or stored by this website.
 - `src/app/components/WeddingSite.tsx` contains the invitation and section copy.
 - `src/app/globals.css` controls the responsive layout, colors, and animations.
-- `src/app/components/WeddingInteractions.tsx` controls the staggered text reveals and gentle movement of the couple’s names.
+- `src/app/components/WeddingInteractions.tsx` controls the staggered text reveals and gentle movement of the couple’s names. `SmoothScrolling.tsx` uses Lenis for smooth wheel scrolling and section links, while preserving native touch and keyboard scrolling.
 - `public/john-lauren-and-marjolyn.ics` provides the calendar download. If the wedding date, time, or venue changes, update this file as well. Its start time is stored in UTC: November 14, 2026 at 01:00 UTC is 9:00 a.m. in the Philippines. No end time is assumed.
 - `src/app/layout.tsx` contains the page title and sharing metadata; keep them in sync with the event details.
 

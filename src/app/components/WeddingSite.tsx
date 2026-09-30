@@ -1,5 +1,6 @@
 import Botanical, { FlowerSprig } from "./Botanical";
 import TextReveal from "./TextReveal";
+import SmoothScrolling from "./SmoothScrolling";
 import {
   Countdown,
   MotionEnhancements,
@@ -49,11 +50,12 @@ export default function WeddingSite() {
         Skip to invitation
       </a>
       <Navigation />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <section
           className="hero"
           id="invitation"
           aria-labelledby="hero-title"
+          tabIndex={-1}
         >
           <div className="hero-border" aria-hidden="true" />
           <div className="hero-botanical hero-botanical-left">
@@ -123,6 +125,7 @@ export default function WeddingSite() {
 
         <section
           id="celebration"
+          tabIndex={-1}
           className="celebration section-shell"
           aria-labelledby="celebration-title"
         >
@@ -187,6 +190,7 @@ export default function WeddingSite() {
 
         <section
           id="entourage"
+          tabIndex={-1}
           className="entourage section-shell"
           aria-labelledby="entourage-title"
         >
@@ -251,6 +255,7 @@ export default function WeddingSite() {
 
         <section
           id="details"
+          tabIndex={-1}
           className="details section-shell"
           aria-labelledby="details-title"
         >
@@ -309,6 +314,7 @@ export default function WeddingSite() {
 
         <section
           id="questions"
+          tabIndex={-1}
           className="questions section-shell"
           aria-labelledby="questions-title"
         >
@@ -340,6 +346,7 @@ export default function WeddingSite() {
 
         <section
           id="rsvp"
+          tabIndex={-1}
           className="rsvp section-shell"
           aria-labelledby="rsvp-title"
         >
@@ -406,6 +413,7 @@ export default function WeddingSite() {
         </a>
       </footer>
       <MotionEnhancements />
+      <SmoothScrolling />
     </div>
   );
 }
