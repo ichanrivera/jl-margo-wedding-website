@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//JL and Margo//Wedding Invitation//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:jl-margo-wedding-20261114@wedding.local
+DTSTAMP:20260930T000000Z
+DTSTART:20261114T010000Z
+SUMMARY:John Lauren and Marjolyn's Wedding
+LOCATION:Casa Dali Bato\, Bato\, Camarines Sur
+DESCRIPTION:The ceremony begins at 9:00 a.m. Philippine time. Please arrive
+  early.
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

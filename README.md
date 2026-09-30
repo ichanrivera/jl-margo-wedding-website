@@ -1,40 +1,24 @@
-# jl-margo-wedding-website
+# JL & Margo’s wedding invitation
 
-A website made for the wedding of JL and Margo, built with [Next.js](https://nextjs.org).
+An animated wedding invitation for John Lauren and Marjolyn, built with Next.js 16 and React 19. The design uses locally hosted fonts, botanical SVG artwork, the sage, blush, buttercup, cornflower, and lavender colors of the wedding attire palette.
 
-This project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [localhost:3000](http://localhost:3000). Run `npm run lint` and `npm run build` to validate changes.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Update the invitation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app/wedding.ts` contains the wedding details, entourage, attire palette, and guest questions.
+- Add the real RSVP form URL to `WEDDING.rsvpUrl` when available. With an empty URL, guests are asked to message the couple directly. No responses are collected or stored by this website.
+- `src/app/components/WeddingSite.tsx` contains the invitation and section copy.
+- `src/app/globals.css` controls the responsive layout, colors, and animations.
+- `src/app/components/WeddingInteractions.tsx` controls the staggered text reveals and gentle movement of the couple’s names.
+- `public/john-lauren-and-marjolyn.ics` provides the calendar download. If the wedding date, time, or venue changes, update this file as well. Its start time is stored in UTC: November 14, 2026 at 01:00 UTC is 9:00 a.m. in the Philippines. No end time is assumed.
+- `src/app/layout.tsx` contains the page title and sharing metadata; keep them in sync with the event details.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The countdown uses an explicit Philippine time-zone offset. The site honors reduced-motion preferences, uses native expandable FAQs, and supports keyboard navigation. Core invitation content is rendered on the server. Fonts and their open-source licenses are included in `src/app/fonts/`.
