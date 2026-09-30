@@ -1,7 +1,63 @@
+import type { CSSProperties, JSX } from "react";
+
+/* ------------------------------------------------------------------
+   Types
+------------------------------------------------------------------- */
+interface Wedding {
+  groom: string;
+  bride: string;
+  tagline: string;
+  date: string;
+  time: string;
+  place: string;
+  rsvpDeadline: string;
+}
+
+interface ParentGroup {
+  title: string;
+  names: string[];
+}
+
+interface EntourageGroup {
+  id: string;
+  title: string;
+  names: string[];
+}
+
+interface Entourage {
+  parents: ParentGroup[];
+  groups: EntourageGroup[];
+}
+
+interface AttireColor {
+  name: string;
+  hex: string;
+}
+
+interface Contact {
+  id: string;
+  name: string;
+  phone: string;
+  email: string;
+}
+
+interface LettersProps {
+  text: string;
+  start?: number;
+}
+
+interface FakeQRProps {
+  size?: number;
+}
+
+interface StarProps {
+  className: string;
+}
+
 /* ------------------------------------------------------------------
    EDIT ME — placeholder content lives up here so it's easy to swap.
 ------------------------------------------------------------------- */
-const WEDDING = {
+const WEDDING: Wedding = {
   groom: "John Lauren",
   bride: "Marjolyn",
   tagline: "are getting married, and you're invited to the party",
@@ -11,7 +67,7 @@ const WEDDING = {
   rsvpDeadline: "November 15, 2026",
 };
 
-const ENTOURAGE = {
+const ENTOURAGE: Entourage = {
   parents: [
     { title: "Parents of the Groom", names: ["Mr. Groom's Father", "Mrs. Groom's Mother"] },
     { title: "Parents of the Bride", names: ["Mr. Bride's Father", "Mrs. Bride's Mother"] },
@@ -26,7 +82,7 @@ const ENTOURAGE = {
   ],
 };
 
-const REMINDERS = [
+const REMINDERS: string[] = [
   "Please arrive by 2:30 PM so we can start right on time.",
   "Adults only, except for our little entourage. We hope you understand.",
   "Kindly RSVP before the deadline so we can save you a seat.",
@@ -34,14 +90,14 @@ const REMINDERS = [
   "The garden path is grassy. Block heels and wedges will thank you.",
 ];
 
-const COLORS = [
+const COLORS: AttireColor[] = [
   { name: "Wisteria", hex: "#B9A6E8" },
   { name: "Sage", hex: "#A9C9A4" },
   { name: "Butter", hex: "#F6E3A1" },
   { name: "Petal", hex: "#F4C6D3" },
 ];
 
-const CONTACTS = [
+const CONTACTS: Contact[] = [
   { id: "contact-groom", name: "John Lauren", phone: "+63 900 000 0000", email: "john@example.com" },
   { id: "contact-bride", name: "Marjolyn", phone: "+63 900 000 0001", email: "marjolyn@example.com" },
 ];
@@ -51,7 +107,7 @@ const CONTACTS = [
 ------------------------------------------------------------------- */
 
 // Splits a name into letters so each can bounce in on page load.
-function Letters({ text, start = 0 }) {
+function Letters({ text, start = 0 }: LettersProps): JSX.Element {
   return (
     <span className="letters" aria-label={text}>
       {text.split("").map((ch, i) => (
@@ -59,7 +115,7 @@ function Letters({ text, start = 0 }) {
           key={i}
           aria-hidden="true"
           className={ch === " " ? "letter letter--space" : "letter"}
-          style={{ "--i": i + start }}
+          style={{ "--i": i + start } as CSSProperties}
         >
           {ch === " " ? "\u00A0" : ch}
         </span>
@@ -70,16 +126,16 @@ function Letters({ text, start = 0 }) {
 
 // Placeholder QR: deterministic pattern with three finder squares.
 // Replace <FakeQR /> (or the whole #rsvp-qr-image div) with your real QR.
-function FakeQR({ size = 25 }) {
+function FakeQR({ size = 25 }: FakeQRProps): JSX.Element {
   let seed = 42;
-  const rand = () => {
+  const rand = (): number => {
     seed = (seed * 1664525 + 1013904223) % 4294967296;
     return seed / 4294967296;
   };
-  const inFinder = (x, y) =>
+  const inFinder = (x: number, y: number): boolean =>
     (x < 8 && y < 8) || (x >= size - 8 && y < 8) || (x < 8 && y >= size - 8);
 
-  const cells = [];
+  const cells: JSX.Element[] = [];
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       if (!inFinder(x, y) && rand() > 0.52) {
@@ -87,7 +143,8 @@ function FakeQR({ size = 25 }) {
       }
     }
   }
-  const finder = (ox, oy) => (
+
+  const finder = (ox: number, oy: number): JSX.Element => (
     <g key={`${ox}-${oy}`}>
       <rect x={ox} y={oy} width="7" height="7" />
       <rect x={ox + 1} y={oy + 1} width="5" height="5" fill="#fff" />
@@ -112,16 +169,18 @@ function FakeQR({ size = 25 }) {
   );
 }
 
-const Star = ({ className }) => (
-  <svg className={`star ${className}`} viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 0c.8 6.6 5.4 11.2 12 12-6.6.8-11.2 5.4-12 12-.8-6.6-5.4-11.2-12-12C6.6 11.2 11.2 6.6 12 0z" />
-  </svg>
-);
+function Star({ className }: StarProps): JSX.Element {
+  return (
+    <svg className={`star ${className}`} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 0c.8 6.6 5.4 11.2 12 12-6.6.8-11.2 5.4-12 12-.8-6.6-5.4-11.2-12-12C6.6 11.2 11.2 6.6 12 0z" />
+    </svg>
+  );
+}
 
 /* ------------------------------------------------------------------
    Page
 ------------------------------------------------------------------- */
-export default function WeddingSite() {
+export default function WeddingSite(): JSX.Element {
   return (
     <main id="wedding-site">
       {/* ============ 1. HERO ============ */}
@@ -189,8 +248,8 @@ export default function WeddingSite() {
           {ENTOURAGE.groups.map((g) => (
             <div key={g.id} id={`entourage-${g.id}`} className="entourage-group">
               <h3 className="entourage-role">{g.title}</h3>
-              {g.names.map((n) => (
-                <p key={n} className="entourage-name">{n}</p>
+              {g.names.map((n, i) => (
+                <p key={`${n}-${i}`} className="entourage-name">{n}</p>
               ))}
             </div>
           ))}
@@ -209,7 +268,7 @@ export default function WeddingSite() {
             <div id="rsvp-text">
               <h3 className="detail-title">RSVP</h3>
               <p className="detail-copy">
-                Scan the code to tell us if you're coming. Please reply by{" "}
+                Scan the code to tell us if you&apos;re coming. Please reply by{" "}
                 <strong>{WEDDING.rsvpDeadline}</strong>.
               </p>
             </div>
@@ -254,8 +313,8 @@ export default function WeddingSite() {
           <div id="gifts" className="detail detail--gifts">
             <h3 className="detail-title">Gift Guide</h3>
             <p className="detail-copy">
-              Your presence is our favorite present. If you'd like to give something
-              anyway, we're saving up for our first home together.
+              Your presence is our favorite present. If you&apos;d like to give something
+              anyway, we&apos;re saving up for our first home together.
             </p>
             <ul id="gifts-list">
               <li className="gift">Cash gifts are warmly welcome</li>
