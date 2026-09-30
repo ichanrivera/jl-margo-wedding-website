@@ -44,35 +44,31 @@
 /* ------------------------------------------------------------------
    Flowers (shared)
 ------------------------------------------------------------------- */
-.bloom {
+/* The wrapper holds position + rotation. The svg inside does the swaying,
+   pivoting from the base of the stem so the flower bends, not spins. */
+.bloom-wrap {
   position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.bloom {
+  display: block;
+  width: 100%;
   height: auto;
   overflow: visible;
-  pointer-events: none;
-  z-index: 2;
-  transform-origin: 50% 50%;
-  animation: sway 9s ease-in-out infinite;
-}
-
-.bloom:nth-of-type(3n) {
-  animation-delay: -3s;
-  animation-duration: 11s;
-}
-
-.bloom:nth-of-type(3n + 1) {
-  animation-delay: -6s;
-  animation-duration: 8s;
+  transform-origin: 50% 100%;
+  animation: sway var(--sway-dur, 11s) ease-in-out var(--sway-delay, 0s) infinite alternate;
+  will-change: transform;
 }
 
 @keyframes sway {
-
-  0%,
-  100% {
-    transform: rotate(-1.6deg);
+  from {
+    transform: rotate(calc(var(--sway-amp, 5deg) * -1)) skewX(calc(var(--sway-amp, 5deg) * -0.6));
   }
 
-  50% {
-    transform: rotate(1.6deg);
+  to {
+    transform: rotate(var(--sway-amp, 5deg)) skewX(calc(var(--sway-amp, 5deg) * 0.6));
   }
 }
 
@@ -335,6 +331,13 @@
   overflow: hidden;
 }
 
+#entourage-officiant{
+  position: relative;
+  z-index: 3;
+  max-width: 640px;
+  margin: 0 auto 4.5rem;
+}
+
 #entourage-parents {
   position: relative;
   z-index: 3;
@@ -358,9 +361,43 @@
   z-index: 3;
   max-width: 1000px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 3.5rem 2.5rem;
+}
+
+.entourage-group {
+  flex: 0 1 280px;
+}
+
+/* married couples: two columns, one couple per row */
+.entourage-group--pairs,
+#entourage-principal-sponsors {
+  flex: 1 1 100%;
+}
+
+.entourage-pairs {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* thin gold line between the two columns */
+.entourage-pairs::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 50%;
+  width: 1px;
+  background: var(--gold-line);
+}
+
+.entourage-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
 }
 
 .entourage-group::before {
@@ -476,7 +513,7 @@
   z-index: 3;
 }
 
-.detail--rsvp>.bloom {
+.detail--rsvp>.bloom-wrap {
   position: absolute;
   z-index: 2;
 }
