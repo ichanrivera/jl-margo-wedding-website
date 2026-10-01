@@ -740,7 +740,7 @@ h3 em {
   align-items: start;
   gap: 28px;
 }
-.entourage-row-1 .entourage-group {
+.entourage-row-1 .entourage-group:not(.sponsors) {
   grid-column: 2;
 }
 .entourage-row-2 {
@@ -1750,7 +1750,7 @@ h3 em {
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .entourage-row-1 .entourage-group {
+  .entourage-row-1 .entourage-group:not(.sponsors) {
     grid-column: auto;
   }
   .sponsor-pair {
