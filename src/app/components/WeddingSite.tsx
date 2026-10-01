@@ -223,30 +223,34 @@ export default function WeddingSite() {
             ))}
           </div>
           <div className="entourage-groups">
-            {ENTOURAGE.groups.map((group) => (
-              <div
-                id={group.id}
-                className={`entourage-group ${group.pairs ? "sponsors" : ""}`}
-                key={group.id}
-                data-reveal
-              >
-                <h3 className="eyebrow">{group.title}</h3>
-                {group.pairs ? (
-                  <div className="sponsor-pairs">
-                    {group.pairs.map(([left, right]) => (
-                      <div className="sponsor-pair" key={left}>
-                        <p className="entourage-name">{left}</p>
-                        <p className="entourage-name">{right}</p>
+            {ENTOURAGE.groups.map((row) => (
+              <div className={`entourage-row entourage-row-${row.length}`} key={row[0].id}>
+                {row.map((group) => (
+                  <div
+                    id={group.id}
+                    className={`entourage-group ${group.pairs ? "sponsors" : ""}`}
+                    key={group.id}
+                    data-reveal
+                  >
+                    <h3 className="eyebrow">{group.title}</h3>
+                    {group.pairs ? (
+                      <div className="sponsor-pairs">
+                        {group.pairs.map(([left, right]) => (
+                          <div className="sponsor-pair" key={left}>
+                            <p className="entourage-name">{left}</p>
+                            <p className="entourage-name">{right}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    ) : (
+                      group.names?.map((name) => (
+                        <p className="entourage-name" key={name}>
+                          {name}
+                        </p>
+                      ))
+                    )}
                   </div>
-                ) : (
-                  group.names?.map((name) => (
-                    <p className="entourage-name" key={name}>
-                      {name}
-                    </p>
-                  ))
-                )}
+                ))}
               </div>
             ))}
           </div>

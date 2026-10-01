@@ -23,7 +23,7 @@ export interface EntourageGroup {
 interface Entourage {
   officiant: { id: string; title: string; names: string[] };
   parents: { title: string; names: string[] }[];
-  groups: EntourageGroup[];
+  groups: EntourageGroup[][];
 }
 
 export const ENTOURAGE: Entourage = {
@@ -43,64 +43,105 @@ export const ENTOURAGE: Entourage = {
     },
   ],
   groups: [
-    {
-      id: "principal-sponsors",
-      title: "Principal Sponsors",
-      pairs: [
-        ["P MSGT Jhemmel Casili", "Ms. Brenda Gallego"],
-        ["Hon. Mayor Enric Dancalan", "Mrs. Olive De Leon Sandoval"],
-        ["Engr. Leoncio Mota Jr.", "Mrs. Nely McGarvey"],
-        ["Mr. Paul M. Bagasala", "Mrs. Toni Grace Peñaflorida"],
-        ["Mr. Ian Siason", "Mrs. Jhoyce Siason"],
-        ["Mr. Sunny S. Sacueza", "Mrs. Russell De Ocampo"],
-      ],
-    },
-    {
-      id: "best-man",
-      title: "Best Man",
-      names: ["Christian Iriola Rivera"],
-    },
-    {
-      id: "matron-of-honor",
-      title: "Matron of Honor",
-      names: ["Katrina Victoria Ortega-Claravall"],
-    },
-    {
-      id: "maid-of-honor",
-      title: "Maid of Honor",
-      names: ["Jemary Gallego Docot"],
-    },
-    { id: "groomsman", title: "Groomsman", names: ["Dave Docot"] },
-    { id: "bridesmaid", title: "Bridesmaid", names: ["Beyonce Jen Tumbado"] },
-    {
-      id: "to-clothe-us-as-one",
-      title: "To Clothe Us as One",
-      names: ["Catherine Lauta", "John Paul Sanchez"],
-    },
-    {
-      id: "to-tie-us-as-one",
-      title: "To Tie Us as One",
-      names: ["Alkiezha Sandoval", "Benette Mercelle Vicente"],
-    },
-    {
-      id: "little-bride",
-      title: "Little Bride",
-      names: ["Winter Amellie Docot"],
-    },
-    {
-      id: "flower-boy",
-      title: "Flower Boy",
-      names: ["Trent Jacob Catambay"],
-    },
-    {
-      id: "flower-girls",
-      title: "Flower Girls",
-      names: [
-        "Jhelai Patrice Abanilla",
-        "Christine Joy Docot",
-        "Raze Follosco",
-      ],
-    },
+    [
+      {
+        id: "principal-sponsors",
+        title: "Principal Sponsors",
+        pairs: [
+          ["P MSGT Jhemmel Casili", "Ms. Brenda Gallego"],
+          ["Hon. Mayor Enric Dancalan", "Mrs. Olive De Leon Sandoval"],
+          ["Engr. Leoncio Mota Jr.", "Mrs. Nely McGarvey"],
+          ["Mr. Paul M. Bagasala", "Mrs. Toni Grace Peñaflorida"],
+          ["Mr. Ian Siason", "Mrs. Jhoyce Siason"],
+          ["Mr. Sunny S. Sacueza", "Mrs. Russell De Ocampo"],
+        ],
+      },
+    ],
+    [
+      {
+        id: "best-man",
+        title: "Best Man",
+        names: ["Christian Iriola Rivera"],
+      },
+      {
+        id: "matron-of-honor",
+        title: "Matron of Honor",
+        names: ["Katrina Victoria Ortega-Claravall"],
+      },
+      {
+        id: "maid-of-honor",
+        title: "Maid of Honor",
+        names: ["Jemary Gallego Docot"],
+      },
+    ],
+    [
+      { id: "groomsman", title: "Groomsman", names: ["Dave Docot"] },
+      { id: "bridesmaid", title: "Bridesmaid", names: ["Beyonce Jen Tumbado"] },
+    ],
+    [
+      {
+        id: "to-light-our-path",
+        title: "To Light Our Path",
+        names: ["Josalyn Gallego", "Jameson Docot"],
+      },
+      {
+        id: "to-bind-us-as-one",
+        title: "To Bind Us as One",
+        names: ["Jezka Lorraine Sevilla", "Jhunson Docot"],
+      },
+    ],
+    [
+      {
+        id: "to-clothe-us-as-one",
+        title: "To Clothe Us as One",
+        names: ["Catherine Lauta", "John Paul Sanchez"],
+      },
+      {
+        id: "to-tie-us-as-one",
+        title: "To Tie Us as One",
+        names: ["Alkiezha Sandoval", "Benette Mercelle Vicente"],
+      },
+    ],
+    [
+      {
+        id: "little-bride",
+        title: "Little Bride",
+        names: ["Winter Amellie Docot"],
+      },
+    ],
+    [
+      {
+        id: "ring-bearer",
+        title: "Ring Bearer",
+        names: ["Gabriel Francois Gapas"],
+      },
+      {
+        id: "bible-bearer",
+        title: "Bible Bearer",
+        names: ["Ezio Conrad Rivera"],
+      },
+      {
+        id: "coin-bearer",
+        title: "Coin Bearer",
+        names: ["Jordan Clark Docot"],
+      },
+    ],
+    [
+      {
+        id: "flower-boy",
+        title: "Flower Boy",
+        names: ["Trent Jacob Catambay"],
+      },
+      {
+        id: "flower-girls",
+        title: "Flower Girls",
+        names: [
+          "Jhelai Patrice Abanilla",
+          "Christine Joy Docot",
+          "Raze Follosco",
+        ],
+      },
+    ],
   ],
 };
 
