@@ -7,8 +7,8 @@ export const WEDDING = {
   venue: "Casa Dali Bato",
   location: "Bato, Camarines Sur",
   rsvpDeadline: "October 14, 2026",
-  // Add the couple's RSVP form URL when it is available.
-  rsvpUrl: "",
+  rsvpUrl:
+    "https://docs.google.com/forms/d/1sfAWCzxCGoo5Yrx94K_NiIytoKAdqlUgbdzAQ0sjPFs/viewform?chromeless=1&edit_requested=true",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Casa%20Dali%20Bato%2C%20Bato%2C%20Camarines%20Sur",
 };

@@ -14,7 +14,7 @@ Open [localhost:3000](http://localhost:3000). Run `npm run lint` and `npm run bu
 ## Update the invitation
 
 - `src/app/wedding.ts` contains the wedding details, entourage, attire palette, and guest questions.
-- Add the real RSVP form URL to `WEDDING.rsvpUrl` when available. With an empty URL, guests are asked to message the couple directly. No responses are collected or stored by this website.
+- The RSVP button opens the form set in `WEDDING.rsvpUrl`. With an empty URL, guests are asked to message the couple directly. No responses are collected or stored by this website.
 - `src/app/components/WeddingSite.tsx` contains the invitation and section copy.
 - `src/app/globals.css` controls the responsive layout, colors, and animations.
 - `src/app/components/WeddingInteractions.tsx` controls the staggered text reveals and gentle movement of the couple’s names. `SmoothScrolling.tsx` uses Lenis for smooth wheel scrolling and section links, while preserving native touch and keyboard scrolling.

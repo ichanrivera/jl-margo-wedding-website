@@ -181,7 +181,7 @@ export function MotionEnhancements() {
 
       const candidates = Array.from(
         group.querySelectorAll<HTMLElement>(
-          "[data-text-reveal], .eyebrow, .section-number, p, .venue-note, .venue-actions, .countdown-unit, .swatch-item, .faq-item, .rsvp-deadline, .rsvp-direct, .section-flowers, .rsvp-flowers, .gift-flowers",
+          "[data-text-reveal], .eyebrow, .section-number, p, .venue-note, .venue-actions, .countdown-unit, .swatch-item, .attire-example, .faq-item, .rsvp-deadline, .rsvp-direct, .section-flowers, .rsvp-flowers, .gift-flowers",
         ),
       );
       const selected = new Set(candidates);
