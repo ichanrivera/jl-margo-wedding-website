@@ -386,12 +386,13 @@ export default function WeddingSite() {
               </a>
             ) : (
               <div className="rsvp-direct">
-                <p>
-                  Please send your response directly to
+                <p style={{fontSize: "24px"}}>
+                  Please send your response by answering this form on this &nbsp;
+                  <a target="_blank" style={{color: "red"}} href="https://docs.google.com/forms/d/1sfAWCzxCGoo5Yrx94K_NiIytoKAdqlUgbdzAQ0sjPFs/viewform?chromeless=1&edit_requested=true">
+                    <u>link</u>
+                  </a>.
                   <br />
-                  <strong>John Lauren or Marjolyn.</strong>
                 </p>
-                <span>A personal message is all it takes.</span>
               </div>
             )}
             <p className="rsvp-signature">

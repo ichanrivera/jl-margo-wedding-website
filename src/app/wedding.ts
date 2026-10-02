@@ -170,11 +170,6 @@ export const FAQ = [
       "We invite you to be fully present with us. Please keep phones and cameras tucked away during the ceremony as we say our vows.",
   },
   {
-    question: "What shoes would you recommend?",
-    answer:
-      "The garden paths are grassy, so block heels, wedges, or comfortable flats will help you enjoy the celebration with ease.",
-  },
-  {
     question: "Do you have a gift preference?",
     answer:
       "Your presence is the greatest gift. Should you wish to give something more, a contribution toward our first home would be warmly appreciated. A handwritten note would also mean so much to us.",
