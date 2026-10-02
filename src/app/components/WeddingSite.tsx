@@ -1,4 +1,5 @@
 import Botanical, { FlowerSprig } from "./Botanical";
+import { MensAttire, WomensAttire } from "./AttireIllustrations";
 import TextReveal from "./TextReveal";
 import SmoothScrolling from "./SmoothScrolling";
 import {
@@ -275,11 +276,11 @@ export default function WeddingSite() {
               <span className="section-number" aria-hidden="true">
                 01 / WHAT TO WEAR
               </span>
-              <TextReveal as="h3">Garden formal</TextReveal>
+              <TextReveal as="h3">Semi-formal</TextReveal>
               <p className="body-copy">
-                Soft fabrics, graceful silhouettes, and gentle shades inspired
-                by a garden in bloom. We invite you to dress in our wildflower
-                palette.
+                Long-sleeved shirts and trousers for the gentlemen; dresses for
+                the ladies. Choose soft, garden-inspired shades from our
+                wildflower palette.
               </p>
               <p className="attire-note">
                 Kindly reserve white and ivory for the bride.
@@ -298,6 +299,37 @@ export default function WeddingSite() {
                 ))}
               </div>
               <p>A little color, a lovely celebration.</p>
+            </div>
+          </div>
+          <div className="attire-inspiration" data-reveal>
+            <p className="attire-inspiration-title">
+              A little outfit inspiration
+            </p>
+            <div className="attire-examples">
+              <figure className="attire-example">
+                <div className="attire-sketch">
+                  <WomensAttire />
+                </div>
+                <figcaption>
+                  <h4>For the ladies</h4>
+                  <p>
+                    A knee-length or midi dress, paired with dressy flats or
+                    comfortable block heels.
+                  </p>
+                </figcaption>
+              </figure>
+              <figure className="attire-example">
+                <div className="attire-sketch">
+                  <MensAttire />
+                </div>
+                <figcaption>
+                  <h4>For the gentlemen</h4>
+                  <p>
+                    A long-sleeved collared shirt, tailored trousers, and
+                    classic dress shoes.
+                  </p>
+                </figcaption>
+              </figure>
             </div>
           </div>
           <div className="gift-note" data-reveal>
