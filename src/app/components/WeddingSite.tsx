@@ -409,22 +409,21 @@ export default function WeddingSite() {
             </div>
             {WEDDING.rsvpUrl ? (
               <a
-                className="button button-cream"
+                className="button button-garden"
                 href={WEDDING.rsvpUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 Send your RSVP <Arrow />
               </a>
             ) : (
               <div className="rsvp-direct">
-                <p style={{fontSize: "24px"}}>
-                  Please send your response by answering this form on this &nbsp;
-                  <a target="_blank" style={{color: "red"}} href="https://docs.google.com/forms/d/1sfAWCzxCGoo5Yrx94K_NiIytoKAdqlUgbdzAQ0sjPFs/viewform?chromeless=1&edit_requested=true">
-                    <u>link</u>
-                  </a>.
+                <p>
+                  Please send your response directly to
                   <br />
+                  <strong>John Lauren or Marjolyn.</strong>
                 </p>
+                <span>A personal message is all it takes.</span>
               </div>
             )}
             <p className="rsvp-signature">
