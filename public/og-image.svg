@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F3ED"/>
+      <stop offset="1" stop-color="#E8D6C3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="209" y1="138" x2="1004" y2="574" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9614C"/>
+      <stop offset="1" stop-color="#7D4D42"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="32" fill="url(#bg)"/>
+  <circle cx="932" cy="136" r="170" fill="#F0E3D8" fill-opacity="0.8"/>
+  <circle cx="268" cy="504" r="200" fill="#D9B9A5" fill-opacity="0.5"/>
+
+  <path d="M195 185C272 125 325 100 386 100C451 100 504 123 569 163C635 202 692 221 746 220C815 219 868 191 918 128V510H195V185Z" fill="url(#accent)" fill-opacity="0.12"/>
+
+  <text x="600" y="260" text-anchor="middle" fill="#5B3C36" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="6">John Lauren</text>
+  <text x="600" y="322" text-anchor="middle" fill="#5B3C36" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="7">&amp;</text>
+  <text x="600" y="384" text-anchor="middle" fill="#5B3C36" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="6">Marjolyn</text>
+
+  <text x="600" y="452" text-anchor="middle" fill="#7A544A" font-family="Arial, Helvetica, sans-serif" font-size="29" letter-spacing="7">NOVEMBER 14, 2026</text>
+  <line x1="355" y1="470" x2="845" y2="470" stroke="#8A5D50" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  <text x="600" y="520" text-anchor="middle" fill="#6F483F" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="4">CASA DALI BATO • CAMARINES SUR</text>
+</svg>
