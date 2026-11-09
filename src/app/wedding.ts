@@ -99,7 +99,7 @@ export const ENTOURAGE: Entourage = {
       {
         id: "to-tie-us-as-one",
         title: "To Tie Us as One",
-        names: ["Alkiezha Sandoval", "Benette Mercelle Vicente"],
+        names: ["Alkiezha Sandoval", "Von Kristoffer Udarbe"],
       },
     ],
     [
